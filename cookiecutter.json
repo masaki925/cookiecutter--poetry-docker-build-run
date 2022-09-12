@@ -1,0 +1,10 @@
+{
+  "repo_name": "REPO_NAME",
+  "repo_owner": "REPO_OWNER",
+  "gcp_project_id": "GCP_PROJECT_NAME",
+  "gcp_region": "asia-northeast1",
+  "gcp_zone": "asia-northeast1-c",
+  "author": "AUTHOR",
+  "email": "EMAIL",
+  "version": "0.1.0"
+}

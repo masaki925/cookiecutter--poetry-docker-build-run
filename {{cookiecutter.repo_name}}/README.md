@@ -1,6 +1,6 @@
 {{cookiecutter.repo_name}}
 
-## Dependencies
+## Prerequisites
 
 - [Poetry](https://python-poetry.org/)
 - [Docker](https://www.docker.com/)
@@ -13,16 +13,18 @@
 - [Cloud Run](https://cloud.google.com/run)
 - [Cloud Build](https://cloud.google.com/build)
 - [pytest](https://docs.pytest.org/)
+- [pysen](https://github.com/pfnet/pysen)
 
 ## Setup
 
 ### local
 
 ```
-docker compose up
+$ make init
+$ make server
 ```
 
-access to http://localhost:18001/
+access to http://localhost:18001/ at your browser
 
 ### GitHub & GCP
 
@@ -48,7 +50,7 @@ access to http://localhost:18001/
   - check the log and note the Cloud Run endpoint URL
 
 - access to Cloud Run with auth token
-  - set `CLOUD_RUN_FQDN` in Makefile with Cloud Run endpoint URL
+  - set `GCP_RANDOM_STR` and `CLOUD_RUN_FQDN` in Makefile properly with your Cloud Run endpoint URL
   - `make curl_to_cloud_run` 
     - it requires `gcloud auth print-identity-token` run properly
   - you must get response `{"message":"Hello World"}`

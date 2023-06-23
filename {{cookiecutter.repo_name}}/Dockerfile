@@ -1,13 +1,13 @@
-FROM python:3.9-slim as base
+FROM python:3.11-slim as base
 
-RUN pip install poetry==1.2.0
+RUN pip install poetry==1.5.0
 RUN poetry config virtualenvs.create false
 
 WORKDIR /app
 
 # to cache dependencies
 COPY poetry.lock pyproject.toml ./
-RUN poetry install --no-dev
+RUN poetry install --only main --no-root
 
 COPY src ./src
 
